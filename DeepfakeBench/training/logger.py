@@ -25,3 +25,17 @@ def create_logger(log_path):
     logger.addHandler(sh)
 
     return logger
+
+class RankFilter(logging.Filter):
+    """
+    Logging filter that only allows logs from specific rank in distributed training
+    """
+    def __init__(self, rank):
+        super().__init__()
+        self.rank = rank
+
+    def filter(self, record):
+        # If rank attribute doesn't exist, assume rank 0
+        if not hasattr(record, 'rank'):
+            record.rank = 0
+        return record.rank == self.rank

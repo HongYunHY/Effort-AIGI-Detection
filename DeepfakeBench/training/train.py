@@ -34,11 +34,12 @@ from detectors import DETECTOR
 from dataset import *
 from metrics.utils import parse_metric_for_print
 from logger import create_logger, RankFilter
+from dataset.abstract_dataset import DeepfakeAbstractBaseDataset
 
 
 parser = argparse.ArgumentParser(description='Process some paths.')
 parser.add_argument('--detector_path', type=str,
-                    default='/data/home/zhiyuanyan/DeepfakeBenchv2/training/config/detector/effort.yaml',
+                    default='./training/config/detector/effort.yaml',
                     help='path to detector YAML file')
 parser.add_argument("--train_dataset", nargs="+")
 parser.add_argument("--test_dataset", nargs="+")
