@@ -1,9 +1,17 @@
 # directory
-./Celeb-DF-v2
-./FaceForensics++
-./DeepfakeBanech/Celeb-DF-v2
-./DeepfakeBanech/FaceForensics++
+Celeb-DF-v2/
+FaceForensics++/
+DeepfakeBanech/Celeb-DF-v2/
+DeepfakeBanech/FaceForensics++/
 
 # file
 ./Celeb-DF-v2.zip
 ./FaceForensics++.zip
+
+# 忽略 Python 编译缓存
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+
+# log
+DeepfakeBench/zhiyuanyan/
